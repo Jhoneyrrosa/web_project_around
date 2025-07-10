@@ -1,0 +1,11 @@
+.header {
+    margin: 45px auto 40px;
+    width: 880px;
+    height: 74px;
+    border-bottom: 2px solid #545454;
+     box-sizing: border-box; 
+}
+
+.vector {
+    width: 173px;
+}
