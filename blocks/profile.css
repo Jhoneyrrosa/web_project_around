@@ -2,6 +2,30 @@
     margin: 0 auto;
     width: 880px;
     color: white;
-    display: flex;
+     display: flex;
+  justify-content: flex-start;
     background-color: rgb(75, 88, 88);
+}
+
+.image__profile {
+    max-width: 120px;
+    border-radius: 100px;
+   
+}
+
+.box-name__profile {
+    background-color: aquamarine;
+    width: 373px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 0.02;
+
+}
+
+.button-edit-name__profile {
+    width: 10px;
+    margin-left: 25px;
 }

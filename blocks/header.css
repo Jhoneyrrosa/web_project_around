@@ -1,7 +1,7 @@
 .header {
     margin: 45px auto 40px;
     width: 880px;
-    height: 74px;
+    max-height: 74px;
     border-bottom: 2px solid #545454;
      box-sizing: border-box; 
 }
