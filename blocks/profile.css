@@ -1,31 +1,58 @@
 .profile {
     margin: 0 auto;
-    width: 880px;
+    max-width: 880px;
+    width: 100%;
     color: white;
-     display: flex;
-  justify-content: flex-start;
-    background-color: rgb(75, 88, 88);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .image__profile {
-    max-width: 120px;
+    width: 120px;
+    height: 120px;
     border-radius: 100px;
    
 }
 
 .box-name__profile {
-    background-color: aquamarine;
-    width: 373px;
     display: flex;
     justify-content: space-between;
-    margin-left: 30px;
-    font-weight: 500;
-    font-size: 42px;
-    line-height: 0.02;
+    margin-left: 30px; 
+}
 
+.name__profile {
+  width: 373px;
+  margin: 0;
+  font-weight: 500;
+  font-size: 42px;
+  display: flex;
+  line-height: 48px;
 }
 
 .button-edit-name__profile {
-    width: 10px;
+    width: 24px;
+    height: 24px;
     margin-left: 25px;
+    margin-top: 20px;
+    background-color: transparent;
+    border: 3px solid #fff;
+}
+
+.occupation__profile {
+    width: 415px;
+    margin-left: 30px; 
+    margin-bottom: 0;
+    margin-top: 7px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.button-add__profile {
+    width: 150px;
+    height: 50px;
+    margin-left: 160px;
+    background-color: transparent; 
+    border: 3px solid #fff;
 }

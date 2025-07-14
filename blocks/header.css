@@ -3,9 +3,10 @@
     width: 880px;
     max-height: 74px;
     border-bottom: 2px solid #545454;
-     box-sizing: border-box; 
+    box-sizing: border-box; 
 }
 
 .vector__header {
     width: 173px;
+    margin-bottom: 41px;
 }
