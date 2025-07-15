@@ -24,23 +24,30 @@
 }
 
 .box-name__photo-grid {
-  width: 282px;
-  display: flex;
-}
-
-.name__photo-grid {
+  background-color: aquamarine;
+  margin: 24px auto 25px;
   width: 246px;
-  height: 23px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  
+}
+
+.name__photo-grid {
+  width: 220px;
+  align-items: center;
   font-weight: 900;
   font-size: 24px;
-  line-height: 1;
+  line-height: 28px;       
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;            
 }
 
 .Coração__photo-grid {
     width: 21px;
     height: 19px;
-    margin: 30px 18px 0 0;
+       
 }

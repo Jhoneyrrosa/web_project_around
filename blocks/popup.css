@@ -1,0 +1,34 @@
+.overlay {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.popup {
+    height: 330px;
+    width: 430px;
+    background-color: #fff;
+}
+
+.title-popup {
+    width: 330px;
+    margin: 34px 64px 0 36px;
+}
+
+.button-save {
+    width: 358px;
+    height: 50px;
+    margin: 180px 36px 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.2;
+    background-color: #000;
+    color: #fff;
+}
