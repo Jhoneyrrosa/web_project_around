@@ -8,7 +8,7 @@
     gap: 16px;
 }
 
-.box__photo-grid{
+.photo-grid__box{
     background-color: #fff;
     width: 282px;
     height: 361px;
@@ -23,8 +23,7 @@
   object-fit: cover; 
 }
 
-.box-name__photo-grid {
-  background-color: aquamarine;
+.photo-grid__box-name {
   margin: 24px auto 25px;
   width: 246px;
   height: 40px;
@@ -35,7 +34,7 @@
   
 }
 
-.name__photo-grid {
+.photo-grid__name {
   width: 220px;
   align-items: center;
   font-weight: 900;
@@ -46,7 +45,7 @@
   text-overflow: ellipsis;            
 }
 
-.Coração__photo-grid {
+.photo-grid__coração {
     width: 21px;
     height: 19px;
        

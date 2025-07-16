@@ -8,20 +8,20 @@
     align-items: center;
 }
 
-.image__profile {
+.profile__image{
     width: 120px;
     height: 120px;
     border-radius: 100px;
    
 }
 
-.box-name__profile {
+.profile__box-name{
     display: flex;
     justify-content: space-between;
     margin-left: 30px; 
 }
 
-.name__profile {
+.profile__name{
   width: 373px;
   margin: 0;
   font-weight: 500;
@@ -30,7 +30,7 @@
   line-height: 48px;
 }
 
-.button-edit-name__profile {
+.profile__button-edit-name {
     width: 24px;
     height: 24px;
     margin-left: 25px;
@@ -39,7 +39,7 @@
     border: 3px solid #fff;
 }
 
-.occupation__profile {
+.profile__occupation {
     width: 415px;
     margin-left: 30px; 
     margin-bottom: 0;
