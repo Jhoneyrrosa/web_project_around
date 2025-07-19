@@ -10,3 +10,28 @@
     width: 173px;
     margin-bottom: 41px;
 }
+
+@media screen and (max-width: 768px) {
+    .header {
+       max-width: 720px;
+        max-height: 65px;
+        margin: 0 auto;
+        padding: 0 0 40px 50px ;
+       
+    
+    }
+
+@media screen and (max-width: 600px) {
+    .header {
+        width: 520px;
+        max-height: 56px;
+        margin: 0 auto;
+        padding: 0 19px;
+       
+    
+    }
+    .header__vector {
+        width: 150px;
+        margin-left: 19px;
+       }
+}

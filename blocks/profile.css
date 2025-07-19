@@ -56,3 +56,41 @@
     background-color: transparent; 
     border: 3px solid #fff;
 }
+
+@media screen and (max-width: 768px) {
+    .profile {
+        max-width: 720px;
+        margin: 41px auto 36px;
+    }
+
+    .profile__image {
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+   .profile {
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+   .profile__image {
+    margin-bottom: 30px;
+   }
+
+   .profile__name {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+   }
+
+   .profile__occupation {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+   }
+
+   
+}
