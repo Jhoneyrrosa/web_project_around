@@ -67,4 +67,20 @@
     right: -45px;
 }
 
+@media screen and (max-width: 768px) {
+   .popup {
+    max-width: 400px;
+    padding: 20px;
+    
+   }
+.popup__x-popup {
+    width: 26px;
+    height: 26px;
+}  
+}
 
+@media screen and (max-width: 600px) {
+    .overlay {
+        margin-right: auto;
+    }
+}

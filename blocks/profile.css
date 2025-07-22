@@ -64,6 +64,8 @@
       }
 
       .profile__button-add {
+        max-width: 400px;
+        height: 35px;
         margin-right: auto;
       }
 
