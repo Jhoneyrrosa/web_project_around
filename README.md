@@ -39,5 +39,13 @@ Clique no botão de edição (ícone de vetor no header) para abrir o modal
 
 Use o botão "x" no modal para fechar
 
+🌐 Projeto publicado com GitHub Pages
+Este projeto foi publicado online usando GitHub Pages, permitindo que qualquer pessoa possa acessar e visualizar a aplicação diretamente pelo navegador.
+
+🔗 Acesse o projeto EM https://jhoneyrrosa.github.io/web_project_around/ 
+📁 Repositório no GitHub
+
 🧠 Autor
 Desenvolvido por Jhoney Rodrigues Rosa 💬 Contato: [jhoneyrrosa@gmail.com]
+
+
