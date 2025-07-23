@@ -5,17 +5,16 @@
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    display: none;
+}
+.popup-isOclose {
+    display: flex;
 }
 
-.popup__form {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-}
+
 
 .popup {
     height: 330px;
@@ -25,6 +24,12 @@
     box-sizing: border-box;
     position: relative;
     
+}
+
+.popup__form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .popup__title {
@@ -75,6 +80,9 @@
     position: absolute;
     top: -45px;
     right: -45px;
+}
+.popup__x-popup:hover {
+    background-color: #545454;
 }
 
 @media screen and (max-width: 768px) {

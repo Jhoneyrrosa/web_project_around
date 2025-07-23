@@ -38,6 +38,9 @@
     background-color: transparent;
     border: 3px solid #e9e5e5;
 }
+.profile__button-edit-name:hover {
+  border: 3px solid #545454;
+}
 
 .profile__occupation {
     max-width: 415px;
@@ -56,6 +59,9 @@
     margin-left: auto;
     background-color: transparent; 
     border: 3px solid #fff;
+}
+.profile__button-add:hover {
+  border: 3px solid #545454;
 }
 
 @media screen and (max-width: 768px) {
