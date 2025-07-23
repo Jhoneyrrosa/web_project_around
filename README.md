@@ -21,23 +21,6 @@ Layout organizado com classes CSS modulares
 
 Estilo responsivo utilizando a fonte Inter via Google Fonts
 
-📁 Estrutura de Arquivos
-├── index.html          # Página principal
-├── index.js            # Scripts de interação
-├── pages/
-│   └── index.css       # Estilos da página
-├── images/             # Imagens do projeto
-│   ├── photo-grid/     # Galeria
-│   └── outros SVGs e JPGs
-├── favicon.svg         # Ícone da aba do navegador
-🚀 Como usar
-Clone o projeto
-
-Abra o arquivo index.html em seu navegador
-
-Clique no botão de edição (ícone de vetor no header) para abrir o modal
-
-Use o botão "x" no modal para fechar
 
 🌐 Projeto publicado com GitHub Pages
 Este projeto foi publicado online usando GitHub Pages, permitindo que qualquer pessoa possa acessar e visualizar a aplicação diretamente pelo navegador.
