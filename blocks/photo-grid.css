@@ -15,12 +15,17 @@
     border-radius: 10px;
 }
 
+.photo-grid__box:hover .photo-grid__item {
+  transform: scale(1.01);
+}
+
 .photo-grid__item {
   width: 282px; 
   height: 282px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   object-fit: cover; 
+   transition: transform 0.2s ease;
 }
 
 .photo-grid__box-name {
