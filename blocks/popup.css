@@ -10,10 +10,10 @@
     border-radius: 10px;
     display: none;
 }
-.popup-isOclose {
-    display: flex;
-}
 
+.popup-isOpen {
+  display: flex;
+}
 
 
 .popup {
@@ -23,7 +23,7 @@
     padding: 34px 36px 36px;
     box-sizing: border-box;
     position: relative;
-    
+    border-radius: 5px;
 }
 
 .popup__form {
