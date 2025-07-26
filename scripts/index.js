@@ -2,10 +2,6 @@ const modalCloseButton = document.querySelector(".popup__x-popup");
 const popup = document.querySelector(".overlay");
 const modalOpenButton = document.querySelector(".profile__button-edit-name");
 
-function openModal() {
-  popup.classList.add("popup-isOpen");
-}
-
 function closeModal() {
   popup.classList.remove("popup-isOpen");
 }
