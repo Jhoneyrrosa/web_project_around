@@ -1,0 +1,75 @@
+.popup-add-photo {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+   
+}
+
+.popup-add-photo__item {
+    width: 430px;
+    padding: 34px 0 36px;
+    background-color: #fff;
+    margin: 195px auto;
+    position: relative;
+    border-radius: 5px;
+}
+
+.popup-add-photo__title {
+    width: 330px;
+    height: 23px;
+    margin:  0 54px 36px;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.popup-add-photo__form {
+    max-width: 358px;
+    margin: 0 36px;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-add-photo__input-lugar {
+    border: none;
+    border-bottom: 2px solid #545454;
+    box-sizing: border-box;
+}
+
+.popup-add-photo__input-link {
+    margin: 30px 0 48px;
+    border: none;
+    border-bottom: 2px solid #545454;
+    box-sizing: border-box;
+    
+}
+
+.popup-add-photo__button-criar {
+    min-height: 50px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+.popup-add-photo__button-criar:hover {
+    background-color: #545454;
+}
+
+.popup-add-photo__x-popup {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -45px;
+    right: -45px;
+}
+.popup-add-photo__x-popup:hover {
+    opacity: 0.6;
+}

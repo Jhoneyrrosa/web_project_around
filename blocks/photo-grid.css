@@ -6,7 +6,6 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     gap: 16px;
-    position: relative;
 }
 
 .photo-grid__box{
@@ -14,6 +13,7 @@
     width: 282px;
     height: 361px;
     border-radius: 10px;
+    position: relative;
 }
 
 .photo-grid__box:hover .photo-grid__item {
@@ -62,7 +62,11 @@
   position: absolute;
   top: 18px;
   right: 15px;
-  z-index: 5;
+  opacity:  1;
+  cursor: pointer;
+}
+.photo-grid__trash:hover {
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 768px) {
