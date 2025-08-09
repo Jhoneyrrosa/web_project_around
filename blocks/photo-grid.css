@@ -6,6 +6,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     gap: 16px;
+    position: relative;
 }
 
 .photo-grid__box{
@@ -26,6 +27,7 @@
   border-top-right-radius: 10px;
   object-fit: cover; 
   transition: transform 0.2s ease;
+  
 }
 
 .photo-grid__box-name {
@@ -54,6 +56,13 @@
     width: 21px;
     height: 19px;
        
+}
+
+.photo-grid__trash {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  z-index: 5;
 }
 
 @media screen and (max-width: 768px) {
