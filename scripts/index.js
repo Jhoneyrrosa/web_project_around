@@ -5,6 +5,27 @@ const initialCards = [
   {
     name: "Praia de Itamambuca-Ubatuba-SP",
     image: "https://www.viagenscinematograficas.com.br/wp-content/uploads/2023/01/Ubatuba-Melhores-Praias-Capa.jpg"
+  },
+  {
+    name:"Isla del sol - Bolívia",
+    image:"https://cdn.pixabay.com/photo/2013/11/09/02/11/bolivia-207674_1280.jpg"
+  },
+  {
+    name:"Miami- USA",
+    image:"https://cdn.pixabay.com/photo/2015/08/11/18/45/miami-885032_1280.jpg"
+  },
+
+  {
+    name:"Ilha de Mallorca - Espanha",
+    image:"https://cdn.pixabay.com/photo/2013/05/26/09/07/palma-113712_1280.jpg"
+  },
+  {
+    name:"Owl City - Canadá",
+    image:"https://cdn.pixabay.com/photo/2019/08/02/23/09/man-4380804_1280.jpg"
+  },
+  {
+    name:"Swazland - Africa do sul",
+    image:"https://cdn.pixabay.com/photo/2017/02/17/08/23/giraffe-2073609_1280.jpg"
   }
 ];
 
