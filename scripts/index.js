@@ -1,6 +1,9 @@
 const modalCloseButton = document.querySelector(".popup__x-popup");
 const popup = document.querySelector(".overlay");
 const modalOpenButton = document.querySelector(".profile__button-edit-name");
+const addButton = document.querySelector(".profile__button-add");
+const closeAddCardButton = document.querySelector(".popup-add-photo__x-popup");
+const cardPopup = document.querySelector(".popup-add-photo");
 const initialCards = [
   {
     name: "Praia de Itamambuca-Ubatuba-SP",
@@ -51,12 +54,29 @@ function renderCard(data, wrap) {
   console.log(wrap)
 }
 
-function closeModal() {
+function closeProfileModal() {
   popup.classList.remove("popup-isOpen");
 }
 
-modalOpenButton.addEventListener("click", openModal);
-modalCloseButton.addEventListener("click", closeModal);
+function openProfileModal() {
+  inputName.value = profileName.textContent;
+  inputOccupation.value = profileOccupation.textContent;
+  popup.classList.add("popup-isOpen");
+}
+
+modalOpenButton.addEventListener("click", openProfileModal);
+modalCloseButton.addEventListener("click", closeProfileModal);
+
+
+function closeAddCardModal() {
+  cardPopup.classList.remove("popup-add-photo-isOpen");
+}
+
+function openAddCardModal() {
+  cardPopup.classList.add("popup-add-photo-isOpen");
+}
+addButton.addEventListener("click",  openAddCardModal);
+closeAddCardButton.addEventListener("click", closeAddCardModal);
 
 const inputName = document.querySelector(".popup__input-name");
 const inputOccupation = document.querySelector(".popup__input-occupation");
@@ -73,11 +93,6 @@ form.addEventListener("submit", function (event) {
   popup.classList.remove("popup-isOpen");
 });
 
-function openModal() {
-  inputName.value = profileName.textContent;
-  inputOccupation.value = profileOccupation.textContent;
-  popup.classList.add("popup-isOpen");
-}
 
 inputName.value = profileName.textContent;
 inputOccupation.value = profileOccupation.textContent;

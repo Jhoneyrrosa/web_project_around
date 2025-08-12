@@ -11,6 +11,10 @@
    display: none;
 }
 
+.popup-add-photo-isOpen {
+  display: flex;
+}
+
 .popup-add-photo__item {
     width: 430px;
     padding: 34px 0 36px;
