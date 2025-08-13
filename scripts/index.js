@@ -78,6 +78,22 @@ function openAddCardModal() {
 addButton.addEventListener("click",  openAddCardModal);
 closeAddCardButton.addEventListener("click", closeAddCardModal);
 
+const cardNameInput= document.querySelector(".popup-add-photo__input-lugar");
+const cardImageInput= document.querySelector(".popup-add-photo__input-link");
+const cardpopup= document.querySelector(".popup-add-photo__form");
+const cardpopupwrapper= document.querySelector(".popup-add-photo");
+function createCard(evt) {
+evt.preventDefault();
+
+renderCard({
+  name: cardNameInput.value,
+  image: cardImageInput.value
+}, cardsWrapper)
+closeAddCardModal()
+cardPopup.reset()
+}
+
+cardpopupwrapper.addEventListener("submit", createCard);
 const inputName = document.querySelector(".popup__input-name");
 const inputOccupation = document.querySelector(".popup__input-occupation");
 const profileName = document.querySelector(".profile__name");
