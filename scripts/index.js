@@ -6,7 +6,7 @@ const closeAddCardButton = document.querySelector(".popup-add-photo__x-popup");
 const cardPopup = document.querySelector(".popup-add-photo");
 const popupImage = document.querySelector('.popup-image');
 const popupImageFull = document.querySelector('.popup-image__full');
-const popupImageClose = document.querySelector('.popup-image__close');
+ const popupImageClose = document.querySelector('.popup-image__close');
 
 
 function abrirPopupImagem(src, alt) {
@@ -15,10 +15,9 @@ function abrirPopupImagem(src, alt) {
   popupImage.classList.add('isOpen');
 }
 
-// Fechar o popup
-popupImageClose.addEventListener('click', () => {
-  popupImage.classList.remove('isOpen');
-});
+ popupImageClose.addEventListener('click', () => {
+   popupImage.classList.remove('isOpen');
+ });
 const initialCards = [
   {
     name: "Praia de Itamambuca-Ubatuba-SP",
@@ -56,29 +55,30 @@ function generateCard(data){
   const cardImage = cardElement.querySelector(".photo-grid__item");
   const coracao = cardElement.querySelector(".photo-grid__coracao");
   const lixeira = cardElement.querySelector(".photo-grid__trash");
-console.log(cardElement)
-console.log(cardImage)
+
   cardImage.src = data.image;
   cardImage.alt = data.name;
   cardTitle.textContent = data.name;
 
-  cardImage.addEventListener('click', () => {
-  abrirPopupImagem(cardImage.src, cardImage.alt);
-});
-
-    coracao.src = coracaoVazio;
-  coracao.setAttribute('data-like', 'false');
-
-   configurarLike(coracao);
-  configurarDelete(lixeira); 
-
-  return cardElement;
   
+  configurarDelete(lixeira)
+
+  coracao.addEventListener("click", handleLike);
+
+    cardImage.addEventListener('click', () => 
+  abrirPopupImagem(cardImage.src, cardImage.alt));
+  return cardElement;
+};
+
+const handleLike= (event)=> {
+   event.target.classList.toggle("photo-grid__coracao-active");
 }
+
+
 
 function renderCard(data, wrap) {
   wrap.prepend(generateCard(data))
-  console.log(wrap)
+  console.log(wrap);
 }
 
 function closeProfileModal() {
@@ -144,14 +144,12 @@ document.addEventListener('DOMContentLoaded', () => {
   coracoes.forEach(configurarLike);
 });
 
-// 🔹 Apaga o card quando clicar na lixeira
 function configurarDelete(lixeira) {
   lixeira.addEventListener('click', () => {
-    const card = lixeira.closest('.card'); // acha o card mais próximo
-    if (card) {
+    const card = lixeira.closest('.card');
       card.remove();
     }
-  });
+  );
 }
 
 const inputName = document.querySelector(".popup__input-name");
@@ -176,6 +174,8 @@ inputOccupation.value = profileOccupation.textContent;
 initialCards.forEach((card) => {
   renderCard(card, cardsWrapper)
 });
+
+
 
 
 

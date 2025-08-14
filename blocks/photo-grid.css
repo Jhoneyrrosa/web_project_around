@@ -69,6 +69,10 @@
   opacity: 0.6;
 }
 
+.photo-grid__coracao-active {
+  background: transparent url("../images/photo-grid/coracao-cheio.png") no-repeat;
+}
+
 @media screen and (max-width: 768px) {
     .photo-grid {
       max-width: 100%;
