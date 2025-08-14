@@ -4,6 +4,21 @@ const modalOpenButton = document.querySelector(".profile__button-edit-name");
 const addButton = document.querySelector(".profile__button-add");
 const closeAddCardButton = document.querySelector(".popup-add-photo__x-popup");
 const cardPopup = document.querySelector(".popup-add-photo");
+const popupImage = document.querySelector('.popup-image');
+const popupImageFull = document.querySelector('.popup-image__full');
+const popupImageClose = document.querySelector('.popup-image__close');
+
+
+function abrirPopupImagem(src, alt) {
+  popupImageFull.src = src;
+  popupImageFull.alt = alt;
+  popupImage.classList.add('isOpen');
+}
+
+// Fechar o popup
+popupImageClose.addEventListener('click', () => {
+  popupImage.classList.remove('isOpen');
+});
 const initialCards = [
   {
     name: "Praia de Itamambuca-Ubatuba-SP",
@@ -35,22 +50,34 @@ const initialCards = [
 const cardTemplate = document.querySelector("#card-template").content.querySelector(".card");
 const cardsWrapper = document.querySelector(".photo-grid");
 
-function createCard(data){
+function generateCard(data){
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitle = cardElement.querySelector(".photo-grid__name");
   const cardImage = cardElement.querySelector(".photo-grid__item");
+  const coracao = cardElement.querySelector(".photo-grid__coracao");
+  const lixeira = cardElement.querySelector(".photo-grid__trash");
 console.log(cardElement)
 console.log(cardImage)
   cardImage.src = data.image;
   cardImage.alt = data.name;
-
   cardTitle.textContent = data.name;
 
+  cardImage.addEventListener('click', () => {
+  abrirPopupImagem(cardImage.src, cardImage.alt);
+});
+
+    coracao.src = coracaoVazio;
+  coracao.setAttribute('data-like', 'false');
+
+   configurarLike(coracao);
+  configurarDelete(lixeira); 
+
   return cardElement;
+  
 }
 
 function renderCard(data, wrap) {
-  wrap.prepend(createCard(data))
+  wrap.prepend(generateCard(data))
   console.log(wrap)
 }
 
@@ -81,7 +108,7 @@ closeAddCardButton.addEventListener("click", closeAddCardModal);
 const cardNameInput= document.querySelector(".popup-add-photo__input-lugar");
 const cardImageInput= document.querySelector(".popup-add-photo__input-link");
 const cardpopup= document.querySelector(".popup-add-photo__form");
-const cardpopupwrapper= document.querySelector(".popup-add-photo");
+const cardpopupwrapper= document.querySelector(".popup-add-photo__form");
 function createCard(evt) {
 evt.preventDefault();
 
@@ -94,6 +121,39 @@ cardPopup.reset()
 }
 
 cardpopupwrapper.addEventListener("submit", createCard);
+
+const coracaoVazio = './images/photo-grid/Coracao.jpg';
+const coracaoCheio = './images/photo-grid/coracao-cheio.png';
+
+function configurarLike(coracao) {
+  coracao.addEventListener('click', () => {
+    const curtido = coracao.getAttribute('data-like') === 'true';
+
+      if (curtido) {
+      coracao.src = coracaoVazio;
+      coracao.setAttribute('data-like', 'false');
+    } else {
+      coracao.src = coracaoCheio;
+      coracao.setAttribute('data-like', 'true');
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const coracoes = document.querySelectorAll('.photo-grid__coracao');
+  coracoes.forEach(configurarLike);
+});
+
+// 🔹 Apaga o card quando clicar na lixeira
+function configurarDelete(lixeira) {
+  lixeira.addEventListener('click', () => {
+    const card = lixeira.closest('.card'); // acha o card mais próximo
+    if (card) {
+      card.remove();
+    }
+  });
+}
+
 const inputName = document.querySelector(".popup__input-name");
 const inputOccupation = document.querySelector(".popup__input-occupation");
 const profileName = document.querySelector(".profile__name");
@@ -115,7 +175,7 @@ inputOccupation.value = profileOccupation.textContent;
 
 initialCards.forEach((card) => {
   renderCard(card, cardsWrapper)
-})
+});
 
 
 

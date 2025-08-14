@@ -1,0 +1,33 @@
+.popup-image {
+  display: none; 
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-image.isOpen {
+  display: flex;
+}
+
+.popup-image__content {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.popup-image__full {
+  width: 433px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.popup-image__close {
+  display: block;
+  margin: 10px auto 0;
+  padding: 8px 16px;
+  background: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
