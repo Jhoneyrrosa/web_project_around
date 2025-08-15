@@ -77,3 +77,14 @@
 .popup-add-photo__x-popup:hover {
     opacity: 0.6;
 }
+
+ @media screen and (max-width: 600px) {
+    .popup-add-photo__item {
+     width: 282px;
+    }
+
+    .popup-add-photo__x-popup {
+        width: 30px;
+        height: 30px;
+    }
+ }

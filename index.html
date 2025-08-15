@@ -38,8 +38,8 @@
   <div class="popup">
     <h2 class="popup__title">Editar perfil</h2>
     <form class="popup__form">
-    <input class="popup__input-name" type="text" placeholder="Nome" />
-    <input class="popup__input-occupation"  type="text" placeholder="Sobre mim" />
+    <input class="popup__input-name" type="text" placeholder="Nome" required />
+    <input class="popup__input-occupation"  type="text" placeholder="Sobre mim" required />
    <button class="popup__button-save" type="submit">Salvar</button>
     </form>
    <img class="popup__x-popup" src="./images/photo-grid/xpopup.svg" alt="X de fechar">
@@ -50,8 +50,8 @@
   <div class="popup-add-photo__item"> 
     <h2 class="popup-add-photo__title">Novo local</h2>
     <form class="popup-add-photo__form">
-    <input class="popup-add-photo__input-lugar" type="text" placeholder="Título" />
-    <input class="popup-add-photo__input-link"  type="text" placeholder="Link" />
+    <input class="popup-add-photo__input-lugar" type="text" placeholder="Título" required  />
+    <input class="popup-add-photo__input-link"  type="url" placeholder="Link" required  />
    <button class="popup-add-photo__button-criar" type="submit">Criar</button>
     </form>
    <img class="popup-add-photo__x-popup" src="./images/photo-grid/xpopup.svg" alt="X de fechar">
@@ -62,6 +62,7 @@
   <div class="popup-image__content">
     <img class="popup-image__full" src="" alt="">
      <img class="popup-image__close" src="./images/photo-grid/xpopup.svg" alt="X de fechar">
+     <p class="popup-image__description"></p>
   </div>
 </div>
 

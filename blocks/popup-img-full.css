@@ -31,3 +31,21 @@
     right: -45px;
   cursor: pointer;
 } 
+
+.popup-image__description {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+  color: #fff;
+}
+
+ @media screen and (max-width: 600px) {
+    .popup-image__full{
+      width: 280px;
+    }
+
+   .popup-image__close {
+    width: 30px;
+    height: 30px;
+ }
+  }

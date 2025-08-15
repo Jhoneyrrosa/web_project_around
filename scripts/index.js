@@ -6,12 +6,14 @@ const closeAddCardButton = document.querySelector(".popup-add-photo__x-popup");
 const cardPopup = document.querySelector(".popup-add-photo");
 const popupImage = document.querySelector('.popup-image');
 const popupImageFull = document.querySelector('.popup-image__full');
- const popupImageClose = document.querySelector('.popup-image__close');
+const popupImageClose = document.querySelector('.popup-image__close');
+const popupImageDescription = document.querySelector(".popup-image__description")
 
 
 function abrirPopupImagem(src, alt) {
   popupImageFull.src = src;
   popupImageFull.alt = alt;
+  popupImageDescription.textContent = alt;
   popupImage.classList.add('isOpen');
 }
 
