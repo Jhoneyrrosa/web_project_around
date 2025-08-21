@@ -85,6 +85,35 @@
     background-color: #545454;
 }
 
+.popup__error { 
+    color:#d33; 
+    font-size:12px;
+    min-height:1em; 
+    display:block; 
+}
+
+.popup__input_type_error { 
+    border-color:#d33; 
+    outline:none; 
+}
+
+.popup__error_visible { 
+    visibility:visible; 
+}
+
+.popup__button_disabled,
+.popup__button-save:disabled,
+.popup-add-photo__button-criar:disabled{
+  background:#A0A0A0; /* troque pela cor do design */
+  color:#fff;
+  cursor:not-allowed;
+  opacity:1;
+}
+.popup__error{ color:#d33; font-size:12px; min-height:1em; display:block; }
+.popup__input_type_error{ border-color:#d33; outline:none; }
+.popup__error_visible{ visibility:visible; }
+
+
 @media screen and (max-width: 768px) {
    .popup {
     max-width: 400px;

@@ -35,28 +35,36 @@
   <p class="footer__description">&copy; 2026 Around The U.S.</p>
 </footer>
 <div class="overlay">
-  <div class="popup">
+  <div class="popup popup-box">
     <h2 class="popup__title">Editar perfil</h2>
     <form class="popup__form">
-    <input class="popup__input-name" type="text" placeholder="Nome" required />
-    <input class="popup__input-occupation"  type="text" placeholder="Sobre mim" required />
+    <input class="popup__input-name" type="text" placeholder="Nome"  minlength="2" 
+  maxlength="40"/>
+   <span id="profile-name-error" class="popup__error"></span>
+    <input class="popup__input-occupation"  type="text" placeholder="Sobre mim"  minlength="2" 
+  maxlength="200"/>
+   <span id="profile-name-error" class="popup__error"></span>
    <button class="popup__button-save" type="submit">Salvar</button>
     </form>
    <img class="popup__x-popup" src="./images/photo-grid/xpopup.svg" alt="X de fechar">
   </div>
 </div> 
-<div class="popup-add-photo">
+<div class="popup-add-photo  popup-box">
   <div class="popup-add-photo__item"> 
     <h2 class="popup-add-photo__title">Novo local</h2>
     <form class="popup-add-photo__form">
-    <input class="popup-add-photo__input-lugar" type="text" placeholder="Título" required  />
-    <input class="popup-add-photo__input-link"  type="url" placeholder="Link" required  />
+    <input class="popup-add-photo__input-lugar" type="text" placeholder="Título"  minlength="2" 
+  maxlength="30"/>
+   <span id="profile-name-error" class="popup__error"></span>
+   
+    <input class="popup-add-photo__input-link"  type="url" placeholder="Link"/>
+     <span id="profile-name-error" class="popup__error"></span>
    <button class="popup-add-photo__button-criar" type="submit">Criar</button>
     </form>
    <img class="popup-add-photo__x-popup" src="./images/photo-grid/xpopup.svg" alt="X de fechar">
   </div>
 </div>
-<div class="popup-image">
+<div class="popup-image  popup-box">
   <div class="popup-image__content">
     <img class="popup-image__full" src=" " alt=" ">
      <img class="popup-image__close" src="./images/photo-grid/xpopup.svg" alt="X de fechar">

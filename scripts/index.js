@@ -174,8 +174,158 @@ inputName.value = profileName.textContent;
 inputOccupation.value = profileOccupation.textContent;
 
 initialCards.forEach((card) => {
-  renderCard(card, cardsWrapper)
+  renderCard(card, cardsWrapper);
 });
+
+
+// function enableValidation(config) {
+//   const form = document.querySelectorAll(config.formSelector);
+// }
+
+// enableValidation({
+//   formSelector: ".popup__form",
+//   inputSelector: ".popup__input",
+//   submitButtonSelector: ".popup__button",
+//   inactiveButtonClass: "popup__button_disabled",
+//   inputErrorClass: "popup__input_type_error",
+//   errorClass: "popup__error_visible"
+// });
+
+(function wireInlineErrors() {
+  const forms = document.querySelectorAll('.popup__form, .popup-add-photo__form');
+
+  forms.forEach((form) => {
+    const inputs = form.querySelectorAll('input');
+
+    function updateError(input) {
+      const errorEl = input.nextElementSibling && input.nextElementSibling.classList.contains('popup__error')
+        ? input.nextElementSibling
+        : null;
+      if (!errorEl) return;
+
+      if (!input.validity.valid) {
+        // mensagem padrão do browser (pt-BR). Customize se quiser:
+        let msg = input.validationMessage;
+        if (input.type === 'url' && input.value) {
+          msg = 'Insira uma URL válida (ex.: https://exemplo.com)';
+        }
+        errorEl.textContent = msg;
+        input.classList.add('popup__input_type_error');
+        errorEl.classList.add('popup__error_visible');
+      } else {
+        errorEl.textContent = '';
+        input.classList.remove('popup__input_type_error');
+        errorEl.classList.remove('popup__error_visible');
+      }
+    }
+
+    function toggleOnInput(input) {
+      input.addEventListener('input', () => updateError(input));
+      updateError(input); // estado inicial
+    }
+
+    inputs.forEach(toggleOnInput);
+
+    form.addEventListener('submit', (e) => {
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        inputs.forEach(updateError);
+      }
+    });
+  });
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const setups = [
+    { form: '.popup__form', submit: '.popup__button-save' },
+    { form: '.popup-add-photo__form', submit: '.popup-add-photo__button-criar' }
+  ];
+
+  setups.forEach(({ form: fSel, submit: bSel }) => {
+    const form = document.querySelector(fSel);
+    if (!form) return;
+
+    const button = form.querySelector(bSel);
+    const inputs = Array.from(form.querySelectorAll('input'));
+
+    // garante que exista um <span.popup__error> logo após cada input
+    inputs.forEach((input) => {
+      let err = input.nextElementSibling;
+      if (!(err && err.classList.contains('popup__error'))) {
+        err = document.createElement('span');
+        err.className = 'popup__error';
+        if (input.id) err.id = `${input.id}-error`;
+        input.insertAdjacentElement('afterend', err);
+      }
+    });
+
+    function getErrorEl(input){
+      if (input.id){
+        const byId = form.querySelector(`#${input.id}-error`);
+        if (byId) return byId;
+      }
+      const sib = input.nextElementSibling;
+      return (sib && sib.classList.contains('popup__error')) ? sib : null;
+    }
+
+    function showError(input, msg){
+      const el = getErrorEl(input);
+      if (!el) return;
+      el.textContent = msg;
+      input.classList.add('popup__input_type_error');
+      el.classList.add('popup__error_visible');
+    }
+
+    function clearError(input){
+      const el = getErrorEl(input);
+      if (!el) return;
+      el.textContent = '';
+      input.classList.remove('popup__input_type_error');
+      el.classList.remove('popup__error_visible');
+    }
+
+    function customMsg(input){
+      if (input.type === 'url' && input.value && !input.validity.valid)
+        return 'Insira uma URL válida (ex.: https://exemplo.com)';
+      return input.validationMessage;
+    }
+
+    function validateInput(input){
+      if (!input.validity.valid) showError(input, customMsg(input));
+      else clearError(input);
+    }
+
+    function updateButton(){
+      const valid = form.checkValidity();
+      if (button){
+        button.disabled = !valid;
+        button.classList.toggle('popup__button_disabled', !valid);
+      }
+    }
+
+    // estado inicial
+    inputs.forEach(validateInput);
+    updateButton();
+
+    // ao digitar
+    inputs.forEach((i) => {
+      i.addEventListener('input', () => {
+        validateInput(i);
+        updateButton();
+      });
+    });
+
+    // evita submit inválido
+    form.addEventListener('submit', (e) => {
+      if (!form.checkValidity()){
+        e.preventDefault();
+        inputs.forEach(validateInput);
+        updateButton();
+      }
+    });
+  });
+});
+
 
 
 
