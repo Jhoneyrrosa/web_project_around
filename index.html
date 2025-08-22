@@ -1,87 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Jhoney Rodrigues Rosa" />
-    <meta name="description" content="Web project around" />
-    <meta name="keywords" content="HTML, CSS e JavaScript" />
-    <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-    <title>Around the U.S</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Jhoney Rodrigues Rosa" />
+  <meta name="description" content="Web project around" />
+  <meta name="keywords" content="HTML, CSS e JavaScript" />
+  <link rel="stylesheet" href="./pages/index.css" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <title>Around the U.S</title>
 </head>
+
 <body>
-   <div class="page">
-     <header class="header">
-      <div class="header__open-edit"> 
+  <div class="page">
+    <header class="header">
+      <div class="header__open-edit">
         <img class="header__vector" src="./images/Vector (1).svg" alt="Logo Around">
-      </div>  
-     </header>
-     <div class="profile"> 
-      <img class="profile__image" src="./images/image-perfil.jpg" alt="Foto do perfil">
-     <div>
-      <div class="profile__box-name">
-          <h1 class="profile__name">Jacques Cousteau</h1>
-       <button class="profile__button-edit-name"><img src="./images/caneta-edit.png" alt="imagem caneta de edição"></button>
       </div>
-       <p class="profile__occupation">Explorador</p>
-     </div>
-     <button class="profile__button-add"><img src="./images/+.png" alt="imagem de caneta"></button>
-     </div>
-     <main class="photo-grid">
-     
-     </main>
-<footer class="footer">
-  <p class="footer__description">&copy; 2026 Around The U.S.</p>
-</footer>
-<div class="overlay">
-  <div class="popup popup-box">
-    <h2 class="popup__title">Editar perfil</h2>
-    <form class="popup__form">
-    <input class="popup__input-name" type="text" placeholder="Nome"  minlength="2" 
-  maxlength="40"/>
-   <span id="profile-name-error" class="popup__error"></span>
-    <input class="popup__input-occupation"  type="text" placeholder="Sobre mim"  minlength="2" 
-  maxlength="200"/>
-   <span id="profile-name-error" class="popup__error"></span>
-   <button class="popup__button-save" type="submit">Salvar</button>
-    </form>
-   <img class="popup__x-popup" src="./images/photo-grid/xpopup.svg" alt="X de fechar">
-  </div>
-</div> 
-<div class="popup-add-photo  popup-box">
-  <div class="popup-add-photo__item"> 
-    <h2 class="popup-add-photo__title">Novo local</h2>
-    <form class="popup-add-photo__form">
-    <input class="popup-add-photo__input-lugar" type="text" placeholder="Título"  minlength="2" 
-  maxlength="30"/>
-   <span id="profile-name-error" class="popup__error"></span>
-   
-    <input class="popup-add-photo__input-link"  type="url" placeholder="Link"/>
-     <span id="profile-name-error" class="popup__error"></span>
-   <button class="popup-add-photo__button-criar" type="submit">Criar</button>
-    </form>
-   <img class="popup-add-photo__x-popup" src="./images/photo-grid/xpopup.svg" alt="X de fechar">
-  </div>
-</div>
-<div class="popup-image  popup-box">
-  <div class="popup-image__content">
-    <img class="popup-image__full" src=" " alt=" ">
-     <img class="popup-image__close" src="./images/photo-grid/xpopup.svg" alt="X de fechar">
-     <p class="popup-image__description"></p>
-  </div>
-</div>
-   <template id="card-template">  
-    <div class="photo-grid__box card" >
-        <img class="photo-grid__item" src="#" alt="">
-          <img class="photo-grid__trash" src="./images/Trash (1).svg">
-         <div class="photo-grid__box-name"> 
-           <p class="photo-grid__name"></p>
-           <img class="photo-grid__coracao" src="./images/photo-grid/Coracao.jpg" alt="Imagem Coração">
-          </div>
+    </header>
+    <div class="profile">
+      <img class="profile__image" src="./images/image-perfil.jpg" alt="Foto do perfil">
+      <div>
+        <div class="profile__box-name">
+          <h1 class="profile__name">Jacques Cousteau</h1>
+          <button class="profile__button-edit-name"><img src="./images/caneta-edit.png"
+              alt="imagem caneta de edição"></button>
+        </div>
+        <p class="profile__occupation">Explorador</p>
+      </div>
+      <button class="profile__button-add"><img src="./images/+.png" alt="imagem de caneta"></button>
     </div>
-  </template>
-<script src="./scripts/index.js"></script>
-</div>
+    <main class="photo-grid">
+
+    </main>
+    <footer class="footer">
+      <p class="footer__description">&copy; 2026 Around The U.S.</p>
+    </footer>
+    <div class="overlay">
+      <div class="popup popup-box">
+        <h2 class="popup__title">Editar perfil</h2>
+        <form class="popup__form">
+          <label class="popup__field">
+            <input class="popup__input-name" type="text" placeholder="Nome" minlength="2" maxlength="40" />
+            <span id="profile-name-error" class="popup__error"></span>
+          </label>
+          <label class="popup__field">
+            <input class="popup__input-occupation" type="text" placeholder="Sobre mim" minlength="2" maxlength="200" />
+            <span id="profile-name-error" class="popup__error"></span>
+          </label>
+          <button class="popup__button-save" type="submit">Salvar</button>
+        </form>
+        <img class="popup__x-popup" src="./images/photo-grid/xpopup.svg" alt="X de fechar">
+      </div>
+    </div>
+    <div class="popup-add-photo  popup-box">
+      <div class="popup-add-photo__item">
+        <h2 class="popup-add-photo__title">Novo local</h2>
+        <form class="popup-add-photo__form">
+          <label class="popup__field">
+            <input class="popup-add-photo__input-lugar" type="text" placeholder="Título" minlength="2" maxlength="30" />
+            <span id="profile-name-error" class="popup__error"></span>
+          </label>
+          <label class="popup__field">
+            <input class="popup-add-photo__input-link" type="url" placeholder="Link" />
+            <span id="profile-name-error" class="popup__error"></span>
+          </label>
+          <button class="popup-add-photo__button-criar" type="submit">Criar</button>
+        </form>
+        <img class="popup-add-photo__x-popup" src="./images/photo-grid/xpopup.svg" alt="X de fechar">
+      </div>
+    </div>
+    <div class="popup-image  popup-box">
+      <div class="popup-image__content">
+        <img class="popup-image__full" src=" " alt=" ">
+        <img class="popup-image__close" src="./images/photo-grid/xpopup.svg" alt="X de fechar">
+        <p class="popup-image__description"></p>
+      </div>
+    </div>
+    <template id="card-template">
+      <div class="photo-grid__box card">
+        <img class="photo-grid__item" src="#" alt="">
+        <img class="photo-grid__trash" src="./images/Trash (1).svg">
+        <div class="photo-grid__box-name">
+          <p class="photo-grid__name"></p>
+          <img class="photo-grid__coracao" src="./images/photo-grid/Coracao.jpg" alt="Imagem Coração">
+        </div>
+      </div>
+    </template>
+    <script src="./scripts/index.js"></script>
+  </div>
 </body>
+
 </html>
