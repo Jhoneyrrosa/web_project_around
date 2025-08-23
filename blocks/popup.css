@@ -11,7 +11,7 @@
     display: none;
 }
 
-.popup-isOpen {
+.isOpen {
     display: flex;
 }
 

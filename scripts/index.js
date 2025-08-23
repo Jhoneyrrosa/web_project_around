@@ -84,13 +84,13 @@ function renderCard(data, wrap) {
 }
 
 function closeProfileModal() {
-  popup.classList.remove("popup-isOpen");
+  popup.classList.remove("isOpen");
 }
 
 function openProfileModal() {
   inputName.value = profileName.textContent;
   inputOccupation.value = profileOccupation.textContent;
-  popup.classList.add("popup-isOpen");
+  popup.classList.add("isOpen");
 }
 
 modalOpenButton.addEventListener("click", openProfileModal);
@@ -98,11 +98,11 @@ modalCloseButton.addEventListener("click", closeProfileModal);
 
 
 function closeAddCardModal() {
-  cardPopup.classList.remove("popup-add-photo-isOpen");
+  cardPopup.classList.remove("isOpen");
 }
 
 function openAddCardModal() {
-  cardPopup.classList.add("popup-add-photo-isOpen");
+  cardPopup.classList.add("isOpen");
 }
 addButton.addEventListener("click",  openAddCardModal);
 closeAddCardButton.addEventListener("click", closeAddCardModal);
@@ -166,7 +166,7 @@ form.addEventListener("submit", function (event) {
   profileName.textContent = inputName.value;
   profileOccupation.textContent = inputOccupation.value;
 
-  popup.classList.remove("popup-isOpen");
+  popup.classList.remove("isOpen");
 });
 
 
@@ -177,19 +177,6 @@ initialCards.forEach((card) => {
   renderCard(card, cardsWrapper);
 });
 
-
-// function enableValidation(config) {
-//   const form = document.querySelectorAll(config.formSelector);
-// }
-
-// enableValidation({
-//   formSelector: ".popup__form",
-//   inputSelector: ".popup__input",
-//   submitButtonSelector: ".popup__button",
-//   inactiveButtonClass: "popup__button_disabled",
-//   inputErrorClass: "popup__input_type_error",
-//   errorClass: "popup__error_visible"
-// });
 
 (function wireInlineErrors() {
   const forms = document.querySelectorAll('.popup__form, .popup-add-photo__form');
@@ -326,25 +313,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function closeModal(popup){
-  popup.classList.remove(".popup-isOpen")
-  console.log("fechou")
+function closeModal(popup) {
+  popup.classList.remove("isOpen");
 }
 
 function handlePopupClose(evt) {
-  if(evt.target.classList.contains(".popup")) {
-    console.log("clicou para fechar")
-closeModal(evt.currentTarget)
+  if (evt.target === evt.currentTarget) {
+    closeModal(evt.currentTarget);
   }
 }
 
 const popupList = document.querySelectorAll(".overlay");
-console.log("popupList", popupList)
-popupList.forEach((item)=>{
-item.addEventListener("click", console.log("click"));
-}
 
-)
+popupList.forEach((item) => {
+  item.addEventListener("click", handlePopupClose);
+});
 
 
 
