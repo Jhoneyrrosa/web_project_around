@@ -326,8 +326,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+function closeModal(popup){
+  popup.classList.remove(".popup-isOpen")
+  console.log("fechou")
+}
 
+function handlePopupClose(evt) {
+  if(evt.target.classList.contains(".popup")) {
+    console.log("clicou para fechar")
+closeModal(evt.currentTarget)
+  }
+}
 
+const popupList = document.querySelectorAll(".overlay");
+console.log("popupList", popupList)
+popupList.forEach((item)=>{
+item.addEventListener("click", console.log("click"));
+}
+
+)
 
 
 
