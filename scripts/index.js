@@ -330,7 +330,14 @@ popupList.forEach((item) => {
 });
 
 
+document.addEventListener("keydown", event=>{
+  if (event.key==="Escape") {
+    closeAddCardModal(popup);
+    closeModal(popupImage);
+    closeProfileModal(popup);
 
+  }
+});
 
 
 
