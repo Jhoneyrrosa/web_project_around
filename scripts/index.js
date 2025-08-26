@@ -11,12 +11,12 @@ const popupImageFull = document.querySelector(".popup-image__full");
 const popupImageClose = document.querySelector(".popup-image__close");
 const popupImageDescription = document.querySelector(".popup-image__description");
 
-// ----- Popup de imagem
+
 function abrirPopupImagem(src, alt) {
   popupImageFull.src = src;
   popupImageFull.alt = alt;
   popupImageDescription.textContent = alt;
-  popup.classList.remove("isOpen"); // garante que não conflita
+  popup.classList.remove("isOpen"); 
   popupImage.classList.add("isOpen");
 }
 
@@ -24,7 +24,6 @@ popupImageClose.addEventListener("click", () => {
   popupImage.classList.remove("isOpen");
 });
 
-// ----- Dados iniciais
 const initialCards = [
   {
     name: "Praia de Itamambuca-Ubatuba-SP",
@@ -60,7 +59,7 @@ const cardTemplate = document
   .content.querySelector(".card");
 const cardsWrapper = document.querySelector(".photo-grid");
 
-// ----- Criação e render de cards
+
 function generateCard(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitle = cardElement.querySelector(".photo-grid__name");
@@ -88,8 +87,6 @@ const handleLike = (event) => {
 function renderCard(data, wrap) {
   wrap.prepend(generateCard(data));
 }
-
-// ----- Popups: perfil
 function closeProfileModal() {
   popup.classList.remove("isOpen");
 }
@@ -100,27 +97,25 @@ function openProfileModal() {
   popupImage.classList.remove("isOpen");
   popup.classList.add("isOpen");
 
-  // revalida depois de preencher via JS
   if (window.refreshPopupForm) window.refreshPopupForm(".popup__form");
 }
 
 modalOpenButton.addEventListener("click", openProfileModal);
 modalCloseButton.addEventListener("click", closeProfileModal);
 
-// ----- Popups: add card
 function closeAddCardModal() {
   cardPopup.classList.remove("isOpen");
 }
 
 function openAddCardModal() {
   cardPopup.classList.add("isOpen");
-  // ao abrir, revalida (inputs possivelmente vazios -> botão desativado + mensagens)
+  
   if (window.refreshPopupForm) window.refreshPopupForm(".popup-add-photo__form");
 }
 addButton.addEventListener("click", openAddCardModal);
 closeAddCardButton.addEventListener("click", closeAddCardModal);
 
-// ----- Submit de novo card
+
 const cardNameInput = document.querySelector(".popup-add-photo__input-lugar");
 const cardImageInput = document.querySelector(".popup-add-photo__input-link");
 const cardpopup = document.querySelector(".popup-add-photo__form");
@@ -141,7 +136,7 @@ function createCard(evt) {
 
 cardpopupwrapper.addEventListener("submit", createCard);
 
-// ----- Like com troca de imagem (se usar img de coração)
+
 const coracaoVazio = "./images/photo-grid/Coracao.jpg";
 const coracaoCheio = "./images/photo-grid/coracao-cheio.png";
 
@@ -163,7 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
   coracoes.forEach(configurarLike);
 });
 
-// ----- Excluir card
 function configurarDelete(lixeira) {
   lixeira.addEventListener("click", () => {
     const card = lixeira.closest(".card");
@@ -171,7 +165,6 @@ function configurarDelete(lixeira) {
   });
 }
 
-// ----- Perfil: submit
 const inputName = document.querySelector(".popup__input-name");
 const inputOccupation = document.querySelector(".popup__input-occupation");
 const profileName = document.querySelector(".profile__name");
@@ -185,14 +178,12 @@ form.addEventListener("submit", function (event) {
   popup.classList.remove("isOpen");
 });
 
-// Preencher inputs com valores atuais
 inputName.value = profileName.textContent;
 inputOccupation.value = profileOccupation.textContent;
 
-// Render inicial
+
 initialCards.forEach((card) => renderCard(card, cardsWrapper));
 
-// ====== Inicializa validação (definida em validate.js)
 document.addEventListener("DOMContentLoaded", () => {
   if (typeof window.initPopupValidation === "function") {
     window.initPopupValidation([
@@ -202,7 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// ----- Fechar ao clicar fora (para overlays com classe .overlay)
 function closeModal(popupEl) {
   popupEl.classList.remove("isOpen");
 }
@@ -212,7 +202,6 @@ function handlePopupClose(evt) {
 const popupList = document.querySelectorAll(".overlay");
 popupList.forEach((item) => item.addEventListener("click", handlePopupClose));
 
-// ----- Fechar com Esc
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     closeAddCardModal();
