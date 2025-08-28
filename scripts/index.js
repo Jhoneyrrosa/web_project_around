@@ -1,4 +1,3 @@
-// index.js — sem a lógica de mensagens (isso está no validate.js)
 
 const modalCloseButton = document.querySelector(".popup__x-popup");
 const popup = document.querySelector(".overlay");
